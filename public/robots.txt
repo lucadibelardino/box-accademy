@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lucadibelardino.github.io/box-accademy/sitemap.xml
