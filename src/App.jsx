@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import Trainers from './components/Trainers';
 import Footer from './components/Footer';
+import CookieBanner from './components/CookieBanner';
+import PrivacyModal from './components/PrivacyModal';
 
 import heroVideo from './assets/hero-video.mp4';
 
 function App() {
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+
   return (
     <div className="app relative min-h-screen text-white">
       {/* Global Fixed Video Background */}
@@ -41,7 +45,10 @@ function App() {
         <Trainers />
       </main>
 
-      <Footer />
+      <Footer onPrivacyClick={() => setIsPrivacyOpen(true)} />
+
+      <CookieBanner />
+      <PrivacyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
     </div>
   );
 }
