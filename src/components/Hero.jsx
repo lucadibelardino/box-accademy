@@ -1,17 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play, ChevronRight } from 'lucide-react';
+import heroVideo from '../assets/hero-video.mp4';
 
 const Hero = () => {
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden bg-bg">
-            {/* Spotlight Effect */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
-                <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/20 blur-[120px] rounded-[100%] opacity-50 animate-spotlight" />
+            {/* Video Background */}
+            <div className="absolute inset-0 z-0">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover opacity-40"
+                >
+                    <source src={heroVideo} type="video/mp4" />
+                </video>
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-bg/80 via-bg/50 to-bg" />
+                <div className="absolute inset-0 bg-gradient-to-r from-bg/80 via-transparent to-bg/80" />
             </div>
 
-            {/* Grid Background */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] z-0" />
+            {/* Spotlight Effect (Subtle overlay on top of video) */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
+                <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/20 blur-[120px] rounded-[100%] opacity-30 animate-spotlight" />
+            </div>
 
             <div className="container relative z-10 text-center px-4">
                 <motion.div
@@ -31,12 +45,12 @@ const Hero = () => {
                     </div>
 
                     {/* Main Heading */}
-                    <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white via-white/90 to-white/50">
+                    <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 text-white drop-shadow-2xl">
                         Master the <br />
                         Art of Boxing
                     </h1>
 
-                    <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+                    <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed font-light drop-shadow-lg">
                         Precision. Power. Discipline. <br />
                         Join the elite community where champions are forged.
                     </p>
