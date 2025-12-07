@@ -13,13 +13,13 @@ const Hero = () => {
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover opacity-40"
+                    className="w-full h-full object-cover opacity-75"
                 >
                     <source src={heroVideo} type="video/mp4" />
                 </video>
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-bg/80 via-bg/50 to-bg" />
-                <div className="absolute inset-0 bg-gradient-to-r from-bg/80 via-transparent to-bg/80" />
+                <div className="absolute inset-0 bg-gradient-to-b from-bg/60 via-bg/20 to-bg" />
+                <div className="absolute inset-0 bg-gradient-to-r from-bg/60 via-transparent to-bg/60" />
             </div>
 
             {/* Spotlight Effect (Subtle overlay on top of video) */}
