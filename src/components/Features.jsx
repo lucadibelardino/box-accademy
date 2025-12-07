@@ -1,69 +1,72 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Dumbbell, Users, Clock, Trophy, Shield, Zap } from 'lucide-react';
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 const features = [
     {
-        icon: <Dumbbell className="w-6 h-6 text-purple-400" />,
+        icon: <Dumbbell className="w-6 h-6" />,
         title: "Pro Equipment",
-        desc: "Train with the same gear used by world champions."
+        desc: "Train with the same gear used by world champions.",
+        className: "md:col-span-2"
     },
     {
-        icon: <Users className="w-6 h-6 text-blue-400" />,
+        icon: <Users className="w-6 h-6" />,
         title: "Expert Coaches",
-        desc: "Learn from former pros and certified trainers."
+        desc: "Learn from former pros and certified trainers.",
+        className: "md:col-span-1"
     },
     {
-        icon: <Clock className="w-6 h-6 text-green-400" />,
+        icon: <Clock className="w-6 h-6" />,
         title: "Flexible Schedule",
-        desc: "Classes available from 6AM to 10PM daily."
+        desc: "Classes available from 6AM to 10PM daily.",
+        className: "md:col-span-1"
     },
     {
-        icon: <Trophy className="w-6 h-6 text-yellow-400" />,
+        icon: <Trophy className="w-6 h-6" />,
         title: "Competition Ready",
-        desc: "Structured programs for amateur and pro fighters."
+        desc: "Structured programs for amateur and pro fighters.",
+        className: "md:col-span-2"
     },
-    {
-        icon: <Shield className="w-6 h-6 text-red-400" />,
-        title: "Safe Environment",
-        desc: "Clean, sanitized, and respectful atmosphere."
-    },
-    {
-        icon: <Zap className="w-6 h-6 text-orange-400" />,
-        title: "High Intensity",
-        desc: "Burn up to 800 calories per session."
-    }
 ];
+
+const FeatureCard = ({ title, desc, icon, className }) => (
+    <motion.div
+        whileHover={{ scale: 1.02 }}
+        className={twMerge(
+            "relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 hover:border-white/20 transition-colors group",
+            className
+        )}
+    >
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+        <div className="relative z-10">
+            <div className="mb-4 inline-flex p-3 rounded-xl bg-white/5 text-primary group-hover:text-white group-hover:bg-primary/20 transition-colors">
+                {icon}
+            </div>
+            <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+            <p className="text-gray-400 leading-relaxed">{desc}</p>
+        </div>
+    </motion.div>
+);
 
 const Features = () => {
     return (
-        <section id="features" className="py-24 relative">
-            <div className="container">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Us</h2>
-                    <p className="text-gray-400 max-w-xl mx-auto">
-                        We provide everything you need to reach your peak performance.
+        <section id="features" className="py-32 bg-bg relative">
+            <div className="container px-4">
+                <div className="text-center mb-20">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50">
+                        Why Choose Us
+                    </h2>
+                    <p className="text-gray-400 max-w-xl mx-auto text-lg">
+                        Everything you need to reach your peak performance, designed for the modern athlete.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                     {features.map((feature, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="glass-panel p-6 hover:bg-white/5 transition-colors group"
-                        >
-                            <div className="mb-4 p-3 bg-white/5 rounded-lg w-fit group-hover:scale-110 transition-transform">
-                                {feature.icon}
-                            </div>
-                            <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                            <p className="text-gray-400 text-sm leading-relaxed">
-                                {feature.desc}
-                            </p>
-                        </motion.div>
+                        <FeatureCard key={index} {...feature} />
                     ))}
                 </div>
             </div>

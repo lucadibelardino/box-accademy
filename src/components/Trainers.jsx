@@ -20,23 +20,28 @@ const trainers = [
 
 const Trainers = () => {
     return (
-        <section id="trainers" className="py-24 border-t border-white/5">
-            <div className="container">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Meet The Team</h2>
+        <section id="trainers" className="py-32 bg-bg border-t border-white/5 relative overflow-hidden">
+            {/* Background Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] -z-10" />
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="container px-4">
+                <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50">
+                    Meet The Team
+                </h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {trainers.map((trainer, index) => (
-                        <div key={index} className="group relative overflow-hidden rounded-2xl aspect-[3/4]">
+                        <div key={index} className="group relative overflow-hidden rounded-3xl aspect-[3/4] border border-white/10 bg-white/5">
                             <img
                                 src={trainer.image}
                                 alt={trainer.name}
-                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
+                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-90" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-90" />
 
-                            <div className="absolute bottom-0 left-0 p-6 w-full">
-                                <h3 className="text-xl font-bold">{trainer.name}</h3>
-                                <p className="text-purple-400 text-sm">{trainer.role}</p>
+                            <div className="absolute bottom-0 left-0 p-8 w-full transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                <h3 className="text-2xl font-bold text-white mb-1">{trainer.name}</h3>
+                                <p className="text-primary font-medium">{trainer.role}</p>
                             </div>
                         </div>
                     ))}
