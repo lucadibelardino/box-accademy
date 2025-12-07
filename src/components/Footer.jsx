@@ -3,7 +3,7 @@ import { Instagram, Twitter, Facebook } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="py-12 border-t border-white/5 bg-bg">
+        <footer className="py-12 border-t border-white/5 bg-black/80 backdrop-blur-md">
             <div className="container px-4">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                     <div className="text-2xl font-bold tracking-tighter text-white">BOX ACADEMY</div>

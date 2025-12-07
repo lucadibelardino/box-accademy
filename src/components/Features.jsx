@@ -53,7 +53,7 @@ const FeatureCard = ({ title, desc, icon, className }) => (
 
 const Features = () => {
     return (
-        <section id="features" className="py-32 bg-bg relative">
+        <section id="features" className="py-32 relative">
             <div className="container px-4">
                 <div className="text-center mb-20">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50">

@@ -1,26 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play, ChevronRight } from 'lucide-react';
-import heroVideo from '../assets/hero-video.mp4';
+
 
 const Hero = () => {
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden">
-            {/* Video Background */}
-            <div className="fixed inset-0 z-0">
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover opacity-75"
-                >
-                    <source src={heroVideo} type="video/mp4" />
-                </video>
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-bg/60 via-bg/20 to-bg" />
-                <div className="absolute inset-0 bg-gradient-to-r from-bg/60 via-transparent to-bg/60" />
-            </div>
+            {/* Video moved to App.jsx */}
 
             {/* Spotlight Effect (Subtle overlay on top of video) */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">

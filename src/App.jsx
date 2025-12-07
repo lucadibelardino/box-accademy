@@ -4,9 +4,25 @@ import Features from './components/Features';
 import Trainers from './components/Trainers';
 import Footer from './components/Footer';
 
+import heroVideo from './assets/hero-video.mp4';
+
 function App() {
   return (
-    <div className="app">
+    <div className="app relative min-h-screen text-white">
+      {/* Global Fixed Video Background */}
+      <div className="fixed inset-0 z-[-1]">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-60"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-bg/80 backdrop-blur-[2px]" />
+      </div>
+
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-white/5 bg-black/50 h-16 flex items-center">
         <div className="container flex justify-between items-center">
           <div className="font-bold text-xl tracking-tighter">BOX ACADEMY</div>
