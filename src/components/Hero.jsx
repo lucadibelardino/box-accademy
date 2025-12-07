@@ -5,9 +5,9 @@ import heroVideo from '../assets/hero-video.mp4';
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden bg-bg">
+        <section className="relative min-h-screen flex flex-col items-center justify-center pt-20 overflow-hidden">
             {/* Video Background */}
-            <div className="absolute inset-0 z-0">
+            <div className="fixed inset-0 z-0">
                 <video
                     autoPlay
                     loop
