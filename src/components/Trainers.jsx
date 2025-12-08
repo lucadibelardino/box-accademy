@@ -20,7 +20,7 @@ const trainers = [
 
 const Trainers = () => {
     return (
-        <section id="trainers" className="py-32 border-t border-white/5 relative overflow-hidden">
+        <section id="trainers" className="py-20 md:py-32 border-t border-white/5 relative overflow-hidden">
             {/* Background Glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] -z-10" />
 

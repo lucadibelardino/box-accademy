@@ -31,7 +31,7 @@ const Hero = () => {
                     </div>
 
                     {/* Main Heading */}
-                    <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 text-white drop-shadow-2xl">
+                    <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter mb-8 text-white drop-shadow-2xl">
                         Master the <br />
                         Art of Boxing
                     </h1>
